@@ -1,12 +1,18 @@
 <?php
-incluide 'conexion.php';
+include ("Conexion.php");
 
 
-$nombre=$_POST[Nombre];
-$nombre=$_POST[Apellidos];
-$nombre=$_POST[Teléfono];
-$nombre=$_POST[Edad];
-$nombre=$_POST[Taller en el que se encuentra:];
+$nombre=$_POST['nombre'];
+$dirreccion=$_POST['direccion'];
+$apellido=$_POST['apellido'];
+$Correo=$_POST['correo'];
+$telefono=$_POST['telefono'];
 
-$query = "INSERT INTO formulario.php Values (0,'$Nomre', '$Apellidos','$Teléfono','$Edad','$Taller en el que se encuantra')"
+mysqli_query($conn, $sqlinsert);
+
+$sqlinsert = "INSERT INTO cliente Values (0,'$nombre', '$direccion','$apellido','$correo','$telefono')";
+
+
+header ( "location:./formes.html.php?insert=success")
+
 ?>

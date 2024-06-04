@@ -1,9 +1,16 @@
 <?php
-$conecta = new msqli('localhost','root','1234567','jardineria')
+$servername = "localhost"; // Nombre del servidor (en este caso, local)
+$username = "root"; // Nombre de usuario de la base de datos
+$password = "1234567"; // Contraseña de la base de datos
+$database = "papeleria_liz"; // Nombre de la base de datos
 
-if ($conecta-> connect_erno){
-    echo "fallo al conectar a MySQL:"(" . $conecta -> conect_errno .") "
-    . $conecta ->connect_error;"
+// Crear una conexión
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
 }
 
+echo "Conexión exitosa"; // Mensaje que se mostrará si la conexión es exitosa
 ?>
