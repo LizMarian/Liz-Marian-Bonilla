@@ -3,16 +3,19 @@ include ("Conexion.php");
 
 
 $nombre=$_POST['nombre'];
-$dirreccion=$_POST['direccion'];
+$direccion=$_POST['direccion'];
 $apellido=$_POST['apellido'];
-$Correo=$_POST['correo'];
+$correo=$_POST['correo'];
 $telefono=$_POST['telefono'];
 
-mysqli_query($conn, $sqlinsert);
+// echo $nombre." ".$direccion." ".$apellido." ".$correo." ".$telefono;
+
+
 
 $sqlinsert = "INSERT INTO cliente Values (0,'$nombre', '$direccion','$apellido','$correo','$telefono')";
 
+mysqli_query($conn, $sqlinsert);
 
-header ( "location:./formes.html.php?insert=success")
+header ( "location:./index.php?insert=success")
 
 ?>
